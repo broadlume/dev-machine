@@ -40,14 +40,12 @@ Unix tools:
 
 - [Universal Ctags] for indexing files for vim tab completion
 - [Git] for version control
-- [OpenSSL] for Transport Layer Security (TLS)
 - [The Silver Searcher] for finding things in files
 - [Watchman] for watching for filesystem events
 - [Zsh] as your shell
 
 [universal ctags]: https://ctags.io/
 [git]: https://git-scm.com/
-[openssl]: https://www.openssl.org/
 [ripgrep]: https://github.com/BurntSushi/ripgrep
 [watchman]: https://facebook.github.io/watchman/
 [zsh]: http://www.zsh.org/

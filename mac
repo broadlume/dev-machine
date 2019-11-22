@@ -117,7 +117,6 @@ tap "universal-ctags/universal-ctags"
 brew "universal-ctags", args: ["HEAD"]
 brew "git"
 brew "git-lfs"
-brew "openssl"
 brew "ripgrep"
 brew "neovim"
 brew "watchman"
@@ -131,7 +130,7 @@ brew "hub"
 brew "imagemagick"
 
 # Programming language prerequisites and package managers
-brew "libyaml" # should come after openssl
+brew "libyaml" 
 brew "coreutils"
 brew 'asdf'
 brew 'rust'
