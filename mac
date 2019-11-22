@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# Welcome to the thoughtbot laptop script!
-# Be prepared to turn your laptop (or desktop, no haters here)
-# into an awesome development machine.
-
 fancy_echo() {
   local fmt="$1"; shift
 
@@ -118,7 +114,6 @@ brew "universal-ctags", args: ["HEAD"]
 brew "git"
 brew "git-lfs"
 brew "ripgrep"
-brew "neovim"
 brew "watchman"
 brew "zsh"
 brew 'fastmod'
@@ -134,6 +129,7 @@ brew "libyaml"
 brew "coreutils"
 brew 'asdf'
 brew 'rust'
+brew 'python'
 
 brew "postgres", start_service: false, restart_service: false
 brew "redis", start_service: false, restart_service: false
@@ -144,6 +140,8 @@ cask 'visual-studio-code'
 cask 'iterm2'
 cask "google-cloud-sdk"
 cask 'docker'
+cask 'postman'
+cask 'ngrok'
 EOF
 
 brew services stop postgres
@@ -160,6 +158,15 @@ add_or_update_asdf_plugin() {
     asdf plugin-update "$name"
   fi
 }
+
+fancy_echo "Removing old language version managers in favor of asdf..."
+brew remove rbenv || true
+brew remove ruby-build || true
+brew remove nodenv || true
+brew remove node-build || true
+if ! command -v brew >/dev/null; then
+  rvm implode
+fi
 
 # shellcheck disable=SC1090
 ASDF_DIR="$(brew --prefix asdf)"
