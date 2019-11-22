@@ -215,15 +215,15 @@ append_to_zshrc 'source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/googl
 append_to_zshrc 'source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"'
 
 # zprezto
-if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-  shopt -s extglob
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/!(README.md); do
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}" || true
-  done
-
-  # shellcheck disable=SC2016
-  append_to_zshrc 'source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"'
-fi
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" || true
+pushd "${ZDOTDIR:-$HOME}/.zprezto"
+git pull --recurse-submodules
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zlogin" "${ZDOTDIR:-$HOME}/.zlogin" || true
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zlogout" "${ZDOTDIR:-$HOME}/.zlogout" || true
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zpreztorc" "${ZDOTDIR:-$HOME}/.zpreztorc" || true
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zprofile" "${ZDOTDIR:-$HOME}/.zprofile" || true
+ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/zshenv" "${ZDOTDIR:-$HOME}/.zshenv" || true
+# shellcheck disable=SC2016
+append_to_zshrc 'source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"'
 
 fancy_echo "Done! Please restart your shell :)"
