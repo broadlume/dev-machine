@@ -142,6 +142,7 @@ cask "google-cloud-sdk"
 cask 'docker'
 cask 'postman'
 cask 'ngrok'
+cask 'tuple'
 EOF
 
 brew services stop postgres
