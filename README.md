@@ -25,7 +25,7 @@ Bug reports for older versions are welcome.
 Download the script:
 
 ```sh
-curl -o- -L https://raw.githubusercontent.com/adhawk/dev-machine/master/mac | bash
+curl -o- -L https://raw.githubusercontent.com/adhawk/dev-machine/master/install | bash
 ```
 
 ## What it sets up
