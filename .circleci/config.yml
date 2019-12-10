@@ -8,5 +8,5 @@ jobs:
       - checkout
       - run: brew update
       - run: brew install shellcheck
-      - run: shellcheck mac
-      - run: ./mac
+      - run: shellcheck install 
+      - run: ./install
