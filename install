@@ -4,7 +4,7 @@ repo="https://github.com/adhawk/dev-machine-repo"
 
 if ! command -v yadm >/dev/null; then
     yadm_bin="/tmp/__yadm"
-    curl -fLos "$yadm_bin" https://github.com/TheLocehiliosan/yadm/raw/master/yadm 
+    curl -fLso "$yadm_bin" https://github.com/TheLocehiliosan/yadm/raw/master/yadm 
     chmod a+x "$yadm_bin"
 else
     yadm_bin="$(command -v yadm)"
