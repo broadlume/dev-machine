@@ -6,7 +6,6 @@ jobs:
       xcode: "11.2.1"
     steps:
       - checkout
-      - run: brew update
-      - run: brew install shellcheck
-      - run: shellcheck install 
       - run: ./install
+      - run: brew install shellcheck
+      - run: shellcheck install
