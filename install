@@ -1,16 +1,4 @@
 #!/bin/bash
 
-repo="https://github.com/broadlume/dev-machine-repo"
-
-if ! command -v yadm >/dev/null; then
-    yadm_bin="/tmp/__yadm"
-    curl -fLso "$yadm_bin" https://github.com/TheLocehiliosan/yadm/raw/master/yadm 
-    chmod a+x "$yadm_bin"
-else
-    yadm_bin="$(command -v yadm)"
-fi
-
-[[ -d ~/.local/share/yadm/repo.git ]] && "$yadm_bin" pull origin master
-[[ ! -d ~/.local/share/yadm/repo.git ]] && "$yadm_bin" clone "$repo"
-
-"$yadm_bin" bootstrap
+curl -L bootstrap.yadm.io | bash -s -- https://github.com/broadlume/dev-machine-repo
+yadm bootstrap
