@@ -6,26 +6,12 @@ It can be run multiple times on the same machine safely.
 It installs, upgrades, or skips packages
 based on what is already installed on the machine.
 
-## Requirements
-
-We support:
-
-- macOS Mavericks (10.9)
-- macOS Yosemite (10.10)
-- macOS El Capitan (10.11)
-- macOS Sierra (10.12)
-- macOS High Sierra (10.13)
-- macOS Mojave (10.14)
-
-Older versions may work but aren't regularly tested.
-Bug reports for older versions are welcome.
-
 ## Install
 
 Download the script:
 
 ```sh
-curl -o- -L https://raw.githubusercontent.com/adhawk/dev-machine/master/install | bash
+curl -o- -L https://raw.githubusercontent.com/broadlume/dev-machine/master/install | bash
 ```
 
 ## What it sets up
