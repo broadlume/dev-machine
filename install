@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repo="https://github.com/adhawk/dev-machine-repo"
+repo="https://github.com/broadlume/dev-machine-repo"
 
 if ! command -v yadm >/dev/null; then
     yadm_bin="/tmp/__yadm"
