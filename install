@@ -10,7 +10,7 @@ else
     yadm_bin="$(command -v yadm)"
 fi
 
-[[ -d ~/.config/yadm/repo.git ]] && "$yadm_bin" pull origin master
-[[ ! -d ~/.config/yadm/repo.git ]] && "$yadm_bin" clone "$repo" --no-bootstrap
+[[ -d ~/.local/share/yadm/repo.git ]] && "$yadm_bin" pull origin master
+[[ ! -d ~/.local/share/yadm/repo.git ]] && "$yadm_bin" clone "$repo" --no-bootstrap
 
 "$yadm_bin" bootstrap
