@@ -1,4 +1,3 @@
 #!/bin/bash
 
 curl -L bootstrap.yadm.io | bash -s -- https://github.com/broadlume/dev-machine-repo
-yadm bootstrap
